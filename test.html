@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bandcamp Search Test</title>
+</head>
+<body>
+    <input type="text" id="searchTerm" placeholder="Enter search term">
+    <button onclick="search()">Search</button>
+    <div id="result"></div>
+
+    <script>
+        async function search() {
+            const searchTerm = document.getElementById('searchTerm').value;
+            const response = await fetch('http://localhost:3001/api/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ searchTerm })
+            });
+            const result = await response.json();
+            document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+        }
+    </script>
+</body>
+</html> 
