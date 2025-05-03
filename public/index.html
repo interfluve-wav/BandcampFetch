@@ -1,18 +1,289 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Bandcamp Search</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandcamp Search Tool</title>
+    <style>
+        :root {
+            --bandcamp-blue: #1DA0C3;
+            --bandcamp-green: #00A661;
+            --bandcamp-dark: #333;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--bandcamp-dark);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .search-box {
+            display: flex;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        #search-input {
+            flex-grow: 1;
+            padding: 1rem;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        #search-button {
+            background-color: var(--bandcamp-green);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        #search-button:hover {
+            background-color: #008f52;
+        }
+        
+        .status-message {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .status-message.error {
+            background-color: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+        
+        .status-message.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+        
+        .status-message.loading {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            display: block;
+        }
+        
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .result-card {
+            background-color: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .result-info {
+            padding: 1rem;
+        }
+        
+        .result-type {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--bandcamp-blue);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .result-artist {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-link {
+            display: block;
+            background-color: var(--bandcamp-blue);
+            color: white;
+            text-align: center;
+            padding: 0.75rem;
+            text-decoration: none;
+            margin-top: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .result-link:hover {
+            background-color: #1686a3;
+        }
+        
+        @media (max-width: 768px) {
+            .search-box {
+                flex-direction: column;
+            }
+            
+            #search-button {
+                padding: 0.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Bandcamp Search Tool</h1>
+    </header>
+    
     <div class="container">
-        <h1>Bandcamp Search</h1>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search">
-            <button onclick="performSearch()">Search</button>
+            <input type="text" id="search-input" placeholder="Enter artist, album, or track name...">
+            <button id="search-button">Search</button>
         </div>
-        <div id="results"></div>
+        
+        <div id="status-message" class="status-message"></div>
+        
+        <div id="results-container" class="results-container">
+            <!-- Results will be displayed here -->
+        </div>
     </div>
-    <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            const resultsContainer = document.getElementById('results-container');
+            const statusMessage = document.getElementById('status-message');
+            
+            // Event listeners
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Search function
+            function performSearch() {
+                const query = searchInput.value.trim();
+                
+                if (!query) {
+                    showStatus('Please enter a search term', 'error');
+                    return;
+                }
+                
+                showStatus('Searching...', 'loading');
+                resultsContainer.innerHTML = '';
+                
+                fetch('/api/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ searchTerm: query })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    statusMessage.style.display = 'none';
+                    
+                    if (!data.success) {
+                        showStatus(data.message || 'No results found', 'error');
+                        return;
+                    }
+                    
+                    if (!data.results || data.results.length === 0) {
+                        showStatus('No results found', 'error');
+                        return;
+                    }
+                    
+                    showStatus(`Found ${data.totalResults} results for "${query}"`, 'success');
+                    displayResults(data.results);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showStatus(`Error: ${error.message}`, 'error');
+                });
+            }
+            
+            // Display search results
+            function displayResults(results) {
+                resultsContainer.innerHTML = '';
+                
+                results.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'result-card';
+                    
+                    // Determine item type
+                    let typeLabel = 'Unknown';
+                    if (item.type === 'album') typeLabel = 'Album';
+                    else if (item.type === 'track') typeLabel = 'Track';
+                    else if (item.type === 'artist') typeLabel = 'Artist';
+                    else typeLabel = item.type ? item.type.charAt(0).toUpperCase() + item.type.slice(1) : 'Unknown';
+                    
+                    // Create card HTML
+                    card.innerHTML = `
+                        <div class="result-info">
+                            <span class="result-type">${typeLabel}</span>
+                            <h3 class="result-title">${item.name}</h3>
+                            ${item.artist ? `<p class="result-artist">by ${item.artist.name}</p>` : ''}
+                            <a href="${item.url}" class="result-link" target="_blank">View on Bandcamp</a>
+                        </div>
+                    `;
+                    
+                    resultsContainer.appendChild(card);
+                });
+            }
+            
+            // Display status message
+            function showStatus(message, type) {
+                statusMessage.textContent = message;
+                statusMessage.className = 'status-message';
+                statusMessage.classList.add(type);
+                statusMessage.style.display = 'block';
+            }
+        });
+    </script>
 </body>
-</html> 
+</html>
+
