@@ -179,6 +179,15 @@
         
         <div id="status-message" class="status-message"></div>
         
+        <div id="save-info" style="margin: 10px 0; padding: 10px; background-color: #d4edda; color: #155724; display: none;">
+            Results saved to file
+        </div>
+        
+        <div id="report-link" style="margin: 15px 0; padding: 10px; background-color: #fff3cd; color: #856404; display: none;">
+            <strong>Report Generated: </strong>
+            <a href="#" target="_blank" id="report-link-anchor">View Detailed HTML Report</a>
+        </div>
+        
         <div id="results-container" class="results-container">
             <!-- Results will be displayed here -->
         </div>
@@ -190,6 +199,7 @@
             const searchButton = document.getElementById('search-button');
             const resultsContainer = document.getElementById('results-container');
             const statusMessage = document.getElementById('status-message');
+            const saveInfo = document.getElementById('save-info');
             
             // Event listeners
             searchButton.addEventListener('click', performSearch);
@@ -228,17 +238,16 @@
                     statusMessage.style.display = 'none';
                     
                     if (!data.success) {
-                        showStatus(data.message || 'No results found', 'error');
+                        showStatus(data.message || 'Search failed', 'error');
                         return;
                     }
                     
                     if (!data.results || data.results.length === 0) {
-                        showStatus('No results found', 'error');
+                        showStatus('No results found', 'info');
                         return;
                     }
                     
-                    showStatus(`Found ${data.totalResults} results for "${query}"`, 'success');
-                    displayResults(data.results);
+                    showResults(data.results, data.savedToFile, data.filePath, data.htmlReportPath);
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -281,6 +290,52 @@
                 statusMessage.className = 'status-message';
                 statusMessage.classList.add(type);
                 statusMessage.style.display = 'block';
+            }
+            
+            // Show save info if results were saved
+            function showResults(items, savedToFile, filePath, htmlReportPath) {
+                resultsContainer.innerHTML = '';
+                
+                if (savedToFile) {
+                    saveInfo.textContent = `Results saved to: ${filePath}`;
+                    saveInfo.style.display = 'block';
+                } else {
+                    saveInfo.style.display = 'none';
+                }
+                
+                // Show report link if available
+                const reportLink = document.getElementById('report-link');
+                const reportLinkAnchor = document.getElementById('report-link-anchor');
+                if (htmlReportPath) {
+                    reportLinkAnchor.href = `/report/${htmlReportPath.split('/').pop()}`;
+                    reportLink.style.display = 'block';
+                } else {
+                    reportLink.style.display = 'none';
+                }
+                
+                items.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'result-card';
+                    
+                    // Determine item type
+                    let typeLabel = 'Unknown';
+                    if (item.type === 'album') typeLabel = 'Album';
+                    else if (item.type === 'track') typeLabel = 'Track';
+                    else if (item.type === 'artist') typeLabel = 'Artist';
+                    else typeLabel = item.type ? item.type.charAt(0).toUpperCase() + item.type.slice(1) : 'Unknown';
+                    
+                    // Create card HTML
+                    card.innerHTML = `
+                        <div class="result-info">
+                            <span class="result-type">${typeLabel}</span>
+                            <h3 class="result-title">${item.name}</h3>
+                            ${item.artist ? `<p class="result-artist">by ${item.artist.name}</p>` : ''}
+                            <a href="${item.url}" class="result-link" target="_blank">View on Bandcamp</a>
+                        </div>
+                    `;
+                    
+                    resultsContainer.appendChild(card);
+                });
             }
         });
     </script>
