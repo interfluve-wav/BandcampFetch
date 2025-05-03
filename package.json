@@ -1,17 +1,24 @@
 {
   "name": "bandcampfetch",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "description": "",
   "dependencies": {
     "bandcamp-fetch": "^2.0.0",
-    "express": "^5.1.0"
-  }
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^2.7.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.27.1"
+  },
+  "type": "module"
 }
