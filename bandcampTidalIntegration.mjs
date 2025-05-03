@@ -1,7 +1,7 @@
-// bandcampTidalIntegration.mjs
+// bandcampTidalIntegration.mjs - Integration between Bandcamp and Tidal
 import fs from 'fs';
 import path from 'path';
-import tidalAPI from './tidalAPI.js';
+import tidalAPI from './tidalApi.js'; // Default Tidal API
 
 /**
  * Class to integrate BandcampFetch with Tidal API
@@ -10,6 +10,7 @@ class BandcampTidalIntegration {
   constructor() {
     this.initialized = false;
     this.resultsDir = 'Results';
+    this.tidalAPI = tidalAPI; // Default Tidal API implementation
   }
 
   /**
@@ -17,10 +18,20 @@ class BandcampTidalIntegration {
    * @param {Object} config - Configuration options
    * @param {string} config.tidalClientId - Tidal API client ID
    * @param {string} config.tidalClientSecret - Tidal API client secret
+   * @param {Object} config.tidalAPI - Optional custom Tidal API implementation
    */
   initialize(config) {
+    // Use custom Tidal API if provided
+    if (config.tidalAPI) {
+      this.tidalAPI = config.tidalAPI;
+      console.log('BandcampTidal Integration using custom Tidal API');
+    }
+    
     // Initialize the Tidal API
-    tidalAPI.initialize(config);
+    this.tidalAPI.initialize({
+      clientId: config.tidalClientId,
+      clientSecret: config.tidalClientSecret
+    });
     
     // Ensure results directory exists
     if (!fs.existsSync(this.resultsDir)) {
@@ -58,8 +69,8 @@ class BandcampTidalIntegration {
         
         console.log(`Checking Tidal for: ${songInfo.artist} - ${songInfo.title}`);
         
-        // Find on Tidal
-        const tidalMatch = await tidalAPI.findSong(songInfo);
+        // Find on Tidal using the current Tidal API implementation
+        const tidalMatch = await this.tidalAPI.findSong(songInfo);
         
         // Add Tidal information to the result
         const enrichedResult = {

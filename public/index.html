@@ -3,339 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandcamp Search Tool</title>
+    <title>JSON:API Test Client</title>
     <style>
-        :root {
-            --bandcamp-blue: #1DA0C3;
-            --bandcamp-green: #00A661;
-            --bandcamp-dark: #333;
-            --light-gray: #f5f5f5;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-gray);
-            color: #333;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--bandcamp-dark);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .container {
+            margin: 0;
+            padding: 20px;
+            color: #333;
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #1DA0C3;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
         }
         
         .search-box {
+            margin: 20px 0;
             display: flex;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            overflow: hidden;
+            gap: 10px;
         }
         
         #search-input {
-            flex-grow: 1;
-            padding: 1rem;
-            border: none;
-            font-size: 1rem;
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
         
-        #search-button {
-            background-color: var(--bandcamp-green);
+        button {
+            padding: 10px 15px;
+            background-color: #1DA0C3;
             color: white;
             border: none;
-            padding: 1rem 2rem;
-            font-size: 1rem;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.2s;
         }
         
-        #search-button:hover {
-            background-color: #008f52;
-        }
-        
-        .status-message {
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border-radius: 4px;
-            display: none;
-        }
-        
-        .status-message.error {
-            background-color: #ffebee;
-            color: #c62828;
-            display: block;
-        }
-        
-        .status-message.success {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            display: block;
-        }
-        
-        .status-message.loading {
-            background-color: #e3f2fd;
-            color: #1565c0;
-            display: block;
-        }
-        
-        .results-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .result-card {
-            background-color: white;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .result-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .result-info {
-            padding: 1rem;
-        }
-        
-        .result-type {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            background-color: var(--bandcamp-blue);
-            color: white;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .result-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .result-artist {
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .result-link {
-            display: block;
-            background-color: var(--bandcamp-blue);
-            color: white;
-            text-align: center;
-            padding: 0.75rem;
-            text-decoration: none;
-            margin-top: 1rem;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-        
-        .result-link:hover {
+        button:hover {
             background-color: #1686a3;
         }
         
-        @media (max-width: 768px) {
-            .search-box {
-                flex-direction: column;
-            }
-            
-            #search-button {
-                padding: 0.75rem;
-            }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow: auto;
+            max-height: 500px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+        
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        
+        .tab.active {
+            border: 1px solid #ddd;
+            border-bottom: 1px solid white;
+            margin-bottom: -1px;
+            background-color: white;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bandcamp Search Tool</h1>
-    </header>
+    <h1>JSON:API Test Client for Bandcamp-Tidal Integration</h1>
     
-    <div class="container">
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="Enter artist, album, or track name...">
-            <button id="search-button">Search</button>
-        </div>
-        
-        <div id="status-message" class="status-message"></div>
-        
-        <div id="save-info" style="margin: 10px 0; padding: 10px; background-color: #d4edda; color: #155724; display: none;">
-            Results saved to file
-        </div>
-        
-        <div id="report-link" style="margin: 15px 0; padding: 10px; background-color: #fff3cd; color: #856404; display: none;">
-            <strong>Report Generated: </strong>
-            <a href="#" target="_blank" id="report-link-anchor">View Detailed HTML Report</a>
-        </div>
-        
-        <div id="results-container" class="results-container">
-            <!-- Results will be displayed here -->
-        </div>
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Enter search term...">
+        <button id="search-standard">Standard Search</button>
+        <button id="search-jsonapi">JSON:API Search</button>
+    </div>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="results">Results</div>
+        <div class="tab" data-tab="raw">Raw JSON</div>
+    </div>
+    
+    <div id="results-tab" class="tab-content active">
+        <h2>Search Results</h2>
+        <div id="results-container"></div>
+    </div>
+    
+    <div id="raw-tab" class="tab-content">
+        <h2>Raw JSON Response</h2>
+        <pre id="json-output"></pre>
     </div>
     
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('search-input');
-            const searchButton = document.getElementById('search-button');
+            const searchStandardBtn = document.getElementById('search-standard');
+            const searchJsonApiBtn = document.getElementById('search-jsonapi');
             const resultsContainer = document.getElementById('results-container');
-            const statusMessage = document.getElementById('status-message');
-            const saveInfo = document.getElementById('save-info');
+            const jsonOutput = document.getElementById('json-output');
+            const tabs = document.querySelectorAll('.tab');
             
-            // Event listeners
-            searchButton.addEventListener('click', performSearch);
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
+            // Tabs functionality
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Update active content
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === `${tabName}-tab`) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
             });
             
-            // Search function
-            function performSearch() {
+            // Standard search
+            searchStandardBtn.addEventListener('click', () => {
                 const query = searchInput.value.trim();
+                if (!query) return;
                 
-                if (!query) {
-                    showStatus('Please enter a search term', 'error');
+                performSearch('/api/search-with-tidal', { searchTerm: query });
+            });
+            
+            // JSON:API search
+            searchJsonApiBtn.addEventListener('click', () => {
+                const query = searchInput.value.trim();
+                if (!query) return;
+                
+                performSearch('/api/jsonapi/search', { searchTerm: query });
+            });
+            
+            // Perform search
+            async function performSearch(endpoint, data) {
+                try {
+                    resultsContainer.innerHTML = '<p>Searching...</p>';
+                    jsonOutput.textContent = '';
+                    
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    // Display raw JSON
+                    jsonOutput.textContent = JSON.stringify(result, null, 2);
+                    
+                    // Display formatted results
+                    if (endpoint.includes('jsonapi')) {
+                        displayJsonApiResults(result);
+                    } else {
+                        displayStandardResults(result);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    resultsContainer.innerHTML = `<p>Error: ${error.message}</p>`;
+                }
+            }
+            
+            // Display standard results
+            function displayStandardResults(data) {
+                if (!data.success) {
+                    resultsContainer.innerHTML = `<p>Error: ${data.message}</p>`;
                     return;
                 }
                 
-                showStatus('Searching...', 'loading');
-                resultsContainer.innerHTML = '';
+                let html = `
+                    <div style="margin-bottom: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 4px;">
+                        <p><strong>Search Term:</strong> ${data.searchTerm || 'Unknown'}</p>
+                        <p><strong>Total Results:</strong> ${data.results.length}</p>
+                        <p><strong>Tidal Matches:</strong> ${data.tidalMatches}</p>
+                        ${data.htmlReportUrl ? `<p><a href="${data.htmlReportUrl}" target="_blank">View Full HTML Report</a></p>` : ''}
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+                `;
                 
-                fetch('/api/search', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ searchTerm: query })
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    statusMessage.style.display = 'none';
+                data.results.forEach(item => {
+                    const tidalFound = item.tidal && item.tidal.found;
                     
-                    if (!data.success) {
-                        showStatus(data.message || 'Search failed', 'error');
-                        return;
-                    }
-                    
-                    if (!data.results || data.results.length === 0) {
-                        showStatus('No results found', 'info');
-                        return;
-                    }
-                    
-                    showResults(data.results, data.savedToFile, data.filePath, data.htmlReportPath);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    showStatus(`Error: ${error.message}`, 'error');
-                });
-            }
-            
-            // Display search results
-            function displayResults(results) {
-                resultsContainer.innerHTML = '';
-                
-                results.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'result-card';
-                    
-                    // Determine item type
-                    let typeLabel = 'Unknown';
-                    if (item.type === 'album') typeLabel = 'Album';
-                    else if (item.type === 'track') typeLabel = 'Track';
-                    else if (item.type === 'artist') typeLabel = 'Artist';
-                    else typeLabel = item.type ? item.type.charAt(0).toUpperCase() + item.type.slice(1) : 'Unknown';
-                    
-                    // Create card HTML
-                    card.innerHTML = `
-                        <div class="result-info">
-                            <span class="result-type">${typeLabel}</span>
-                            <h3 class="result-title">${item.name}</h3>
-                            ${item.artist ? `<p class="result-artist">by ${item.artist.name}</p>` : ''}
-                            <a href="${item.url}" class="result-link" target="_blank">View on Bandcamp</a>
+                    html += `
+                        <div style="border: 1px solid #ddd; border-radius: 4px; padding: 15px;">
+                            <h3>${item.name || 'Untitled'}</h3>
+                            <p>${item.artist ? `by ${item.artist.name}` : ''}</p>
+                            <p style="color: ${tidalFound ? 'green' : 'red'};">
+                                ${tidalFound ? '✓ Available on Tidal' : '✗ Not on Tidal'}
+                            </p>
+                            <p>
+                                <a href="${item.url}" target="_blank">View on Bandcamp</a>
+                                ${tidalFound && item.tidal.match ? 
+                                    `<br><a href="https://tidal.com/browse/track/${item.tidal.match.id}" target="_blank">View on Tidal</a>` : 
+                                    ''}
+                            </p>
                         </div>
                     `;
-                    
-                    resultsContainer.appendChild(card);
                 });
+                
+                html += '</div>';
+                resultsContainer.innerHTML = html;
             }
             
-            // Display status message
-            function showStatus(message, type) {
-                statusMessage.textContent = message;
-                statusMessage.className = 'status-message';
-                statusMessage.classList.add(type);
-                statusMessage.style.display = 'block';
-            }
-            
-            // Show save info if results were saved
-            function showResults(items, savedToFile, filePath, htmlReportPath) {
-                resultsContainer.innerHTML = '';
-                
-                if (savedToFile) {
-                    saveInfo.textContent = `Results saved to: ${filePath}`;
-                    saveInfo.style.display = 'block';
-                } else {
-                    saveInfo.style.display = 'none';
+            // Display JSON:API results
+            function displayJsonApiResults(data) {
+                if (data.errors) {
+                    const errors = data.errors.map(err => `${err.title}: ${err.detail}`).join('<br>');
+                    resultsContainer.innerHTML = `<p>Errors:<br>${errors}</p>`;
+                    return;
                 }
                 
-                // Show report link if available
-                const reportLink = document.getElementById('report-link');
-                const reportLinkAnchor = document.getElementById('report-link-anchor');
-                if (htmlReportPath) {
-                    reportLinkAnchor.href = `/report/${htmlReportPath.split('/').pop()}`;
-                    reportLink.style.display = 'block';
-                } else {
-                    reportLink.style.display = 'none';
+                let html = `
+                    <div style="margin-bottom: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 4px;">
+                        <p><strong>Search Term:</strong> ${data.meta?.searchTerm || 'Unknown'}</p>
+                        <p><strong>Total Results:</strong> ${data.meta?.totalResults || 0}</p>
+                        <p><strong>Tidal Matches:</strong> ${data.meta?.tidalMatches || 0}</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+                `;
+                
+                if (data.data) {
+                    data.data.forEach(resource => {
+                        const hasTidal = resource.relationships && resource.relationships.tidal;
+                        
+                        // Find related Tidal resource if it exists
+                        let tidalResource = null;
+                        if (hasTidal && data.included) {
+                            tidalResource = data.included.find(item => 
+                                item.id === resource.relationships.tidal.data.id
+                            );
+                        }
+                        
+                        html += `
+                            <div style="border: 1px solid #ddd; border-radius: 4px; padding: 15px;">
+                                <h3>${resource.attributes.name || 'Untitled'}</h3>
+                                <p>by ${resource.attributes.artist}</p>
+                                <p style="color: ${hasTidal ? 'green' : 'red'};">
+                                    ${hasTidal ? '✓ Available on Tidal' : '✗ Not on Tidal'}
+                                </p>
+                                <p>
+                                    <a href="${resource.attributes.url}" target="_blank">View on Bandcamp</a>
+                                    ${tidalResource ? 
+                                        `<br><a href="${tidalResource.attributes.url}" target="_blank">View on Tidal</a>` : 
+                                        ''}
+                                </p>
+                            </div>
+                        `;
+                    });
                 }
                 
-                items.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'result-card';
-                    
-                    // Determine item type
-                    let typeLabel = 'Unknown';
-                    if (item.type === 'album') typeLabel = 'Album';
-                    else if (item.type === 'track') typeLabel = 'Track';
-                    else if (item.type === 'artist') typeLabel = 'Artist';
-                    else typeLabel = item.type ? item.type.charAt(0).toUpperCase() + item.type.slice(1) : 'Unknown';
-                    
-                    // Create card HTML
-                    card.innerHTML = `
-                        <div class="result-info">
-                            <span class="result-type">${typeLabel}</span>
-                            <h3 class="result-title">${item.name}</h3>
-                            ${item.artist ? `<p class="result-artist">by ${item.artist.name}</p>` : ''}
-                            <a href="${item.url}" class="result-link" target="_blank">View on Bandcamp</a>
-                        </div>
-                    `;
-                    
-                    resultsContainer.appendChild(card);
-                });
+                html += '</div>';
+                resultsContainer.innerHTML = html;
             }
         });
     </script>

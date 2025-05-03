@@ -1,0 +1,292 @@
+{
+  "searchTerm": "Radiohead",
+  "date": "2025-05-03",
+  "totalResults": 18,
+  "tidalMatches": 0,
+  "results": [
+    {
+      "type": "artist",
+      "name": "Radiohead",
+      "url": "https://radiohead.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0037765652_21.jpg",
+      "location": "Oxford, UK",
+      "genre": "Alternative",
+      "tags": "Alternative",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "KID A MNESIA",
+      "url": "https://radiohead.bandcamp.com/album/kid-a-mnesia",
+      "imageUrl": "https://f4.bcbits.com/img/a3185643660_9.jpg",
+      "artist": "Radiohead",
+      "numTracks": 34,
+      "duration": 7500,
+      "releaseDate": "November 5, 2021",
+      "tags": "England, Oxford, Alternative, United Kingdom",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "In Rainbows",
+      "url": "https://radiohead.bandcamp.com/album/in-rainbows",
+      "imageUrl": "https://f4.bcbits.com/img/a0552435637_9.jpg",
+      "artist": "Radiohead",
+      "numTracks": 10,
+      "duration": 2580,
+      "releaseDate": "December 28, 2007",
+      "tags": "England, United Kingdom, Oxford, Alternative",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "OK Computer",
+      "url": "https://radiohead.bandcamp.com/album/ok-computer",
+      "imageUrl": "https://f4.bcbits.com/img/a2501641316_9.jpg",
+      "artist": "Radiohead",
+      "numTracks": 12,
+      "duration": 3240,
+      "releaseDate": "May 28, 1997",
+      "tags": "Oxford, England, United Kingdom, Alternative",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Kid A",
+      "url": "https://radiohead.bandcamp.com/album/kid-a",
+      "imageUrl": "https://f4.bcbits.com/img/a0808547322_9.jpg",
+      "artist": "Radiohead",
+      "numTracks": 11,
+      "duration": 2820,
+      "releaseDate": "October 2, 2000",
+      "tags": "Oxford, England, United Kingdom, Alternative",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Amanda Palmer Performs The Popular Hits Of Radiohead On Her Magical Ukulele",
+      "url": "https://amandapalmer.bandcamp.com/album/amanda-palmer-performs-the-popular-hits-of-radiohead-on-her-magical-ukulele",
+      "imageUrl": "https://f4.bcbits.com/img/a2371540921_9.jpg",
+      "artist": "Amanda Palmer",
+      "numTracks": 7,
+      "duration": 1980,
+      "releaseDate": "July 20, 2010",
+      "tags": "Radiohead, The Till, Singer Songwriter, Punk Cabaret, Baroque Pop, piano, ukulele, 8ft. Records, Boston, Amanda Palmer, covers, AFP, Alternative",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Radiohead for Solo Piano",
+      "url": "https://joshcohenmusic.bandcamp.com/album/radiohead-for-solo-piano",
+      "imageUrl": "https://f4.bcbits.com/img/a3074823003_9.jpg",
+      "artist": "Josh Cohen",
+      "numTracks": 19,
+      "duration": 7740,
+      "releaseDate": "December 6, 2019",
+      "tags": "Berlin, alternative, contemporary, Ambient, Germany, piano, BE",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Radiohead Rainydayz Remixes",
+      "url": "https://amplive.bandcamp.com/album/radiohead-rainydayz-remixes",
+      "imageUrl": "https://f4.bcbits.com/img/a2238314030_9.jpg",
+      "artist": "Amp Live",
+      "numTracks": 12,
+      "duration": 2580,
+      "releaseDate": "February 2, 2022",
+      "tags": "Electronic, California, United States, bass music, hip hop, electronic music, Los Angeles, reggae",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Radiohead Covers compilation",
+      "url": "https://lottekestner.bandcamp.com/album/radiohead-covers-compilation",
+      "imageUrl": "https://f4.bcbits.com/img/a0171096933_9.jpg",
+      "artist": "Lotte Kestner",
+      "numTracks": 4,
+      "duration": 1020,
+      "releaseDate": "April 7, 2023",
+      "tags": "United States, Washington, folk, shoegaze, Seattle, Alternative",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "22.22 Free Radiohead",
+      "url": "https://angelimanucheproductions.bandcamp.com/album/2222-free-radiohead",
+      "imageUrl": "https://f4.bcbits.com/img/a2257175011_9.jpg",
+      "artist": "Paolo Angeli",
+      "numTracks": 22,
+      "duration": 4560,
+      "releaseDate": "January 11, 2019",
+      "tags": "post-rock, world music, avant-garde, alternative rock, Alternative, free jazz, minimalism, radiohead, prepared guitar, contemporary",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Radiohead Reworks",
+      "url": "https://waldosgift.bandcamp.com/album/radiohead-reworks",
+      "imageUrl": "https://f4.bcbits.com/img/a0879587302_9.jpg",
+      "artist": "Waldo's Gift",
+      "numTracks": 2,
+      "duration": 900,
+      "releaseDate": "April 12, 2022",
+      "tags": "Electronic, Jazz, England, United Kingdom, post-rock, modern jazz, Bristol, Experimental, ambient",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Dj Radiohead",
+      "url": "https://djrhbeats.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0022055244_21.jpg",
+      "location": "Montreal, Québec",
+      "genre": "Hip-Hop/Rap",
+      "tags": "rap, underground hip-hop, boom bap beats, Hip-Hop/Rap, conscious hip-hop, instrumental hip-hop",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Me & THIS Army: Radiohead Remixed & Mashed Up by PZ",
+      "url": "https://bigpauper.bandcamp.com/album/me-this-army-radiohead-remixed-mashed-up-by-pz",
+      "imageUrl": "https://f4.bcbits.com/img/a3027340101_9.jpg",
+      "artist": "Panzah Zandahz",
+      "numTracks": 15,
+      "duration": 2340,
+      "releaseDate": "August 12, 2005",
+      "tags": "jurassic 5, shoegaze hip hop, thom yorke, de la soul, gift of gab, edan, instrumental hip hop, Electronic, Portland, psychedelic hip hop, radiohead, cut chemist, mf doom, mr. lif, kool keith",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Radiohead // redux",
+      "url": "https://hellvetika.bandcamp.com/album/radiohead-redux",
+      "imageUrl": "https://f4.bcbits.com/img/a3888784356_9.jpg",
+      "artist": "Hellvetika",
+      "numTracks": 12,
+      "duration": 4680,
+      "releaseDate": "October 4, 2020",
+      "tags": "Metal, London, Radiohead, doom, loud, heavy, Aaron Edge, redux, sludge, heavy metal, rock, grunge, hellvetika, United Kingdom, England",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Radiohead - Kid A",
+      "url": "https://thehmc.bandcamp.com/album/radiohead-kid-a",
+      "imageUrl": "https://f4.bcbits.com/img/a1885883684_9.jpg",
+      "artist": "Halifax Music Co-op",
+      "numTracks": 10,
+      "duration": 2640,
+      "releaseDate": "June 8, 2015",
+      "tags": "Nova Scotia, Classical, Halifax, orchestra, passion, Canada, Community, wind ensemble",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Have You Heard of Radiohead?",
+      "url": "https://steeplejackrecc.bandcamp.com/album/have-you-heard-of-radiohead",
+      "imageUrl": "https://f4.bcbits.com/img/a2976398612_9.jpg",
+      "artist": "Faultlines",
+      "numTracks": 14,
+      "duration": 5280,
+      "releaseDate": "December 15, 2023",
+      "tags": "Thai Trap, DNB, VIC, Glitch, Industrial, Australia, Dubstep, IDM, Electronic, Electro, Breaks, Ambient, Melbourne",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "November 2021: Radiohead",
+      "url": "https://prfmonthlytributeseries.bandcamp.com/album/november-2021-radiohead",
+      "imageUrl": "https://f4.bcbits.com/img/a2511013603_9.jpg",
+      "artist": "PRF Monthly Tribute Series",
+      "numTracks": 52,
+      "duration": 12720,
+      "releaseDate": "November 30, 2021",
+      "tags": "prf, United States, Illinois, Chicago, Rock",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Reckoner / Nude Remixes (2019 Remaster)",
+      "url": "https://tigermendoza.bandcamp.com/album/reckoner-nude-remixes-2019-remaster",
+      "imageUrl": "https://f4.bcbits.com/img/a1236561760_9.jpg",
+      "artist": "Radiohead",
+      "numTracks": 3,
+      "duration": 900,
+      "releaseDate": "December 30, 2019",
+      "tags": "Breaks, Acoustic, Rock, Oxford, Oxfordshire, Electronic, Electronica",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    }
+  ]
+}

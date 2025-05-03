@@ -1,0 +1,262 @@
+{
+  "searchTerm": "Kayan.a",
+  "date": "2025-05-03",
+  "totalResults": 18,
+  "tidalMatches": 0,
+  "results": [
+    {
+      "type": "artist",
+      "name": "Kayan.a",
+      "url": "https://kayana.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0020323294_21.jpg",
+      "location": "Mumbai, India",
+      "genre": "R&B/Soul",
+      "tags": "Soul, R&B, Neo-Soul, R&B/Soul, Contemporary R&B",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "Please",
+      "url": "https://kayana.bandcamp.com/track/please",
+      "imageUrl": "https://f4.bcbits.com/img/a0970506936_9.jpg",
+      "artist": "Kayan.a",
+      "releaseDate": "June 5, 2020",
+      "tags": "indie pop, R&B, R&B/Soul, Contemporary R&B, Soul, MH, moody, Mumbai, sad, Neo-Soul, India, chill",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "KAYANA",
+      "url": "https://kayana3.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0025785837_21.jpg",
+      "location": "Boston, Massachusetts",
+      "genre": "Ambient",
+      "tags": "Ambient, dark ambient, vibes, R&B, Soul",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "typing...",
+      "url": "https://kayana3.bandcamp.com/track/typing",
+      "imageUrl": "https://f4.bcbits.com/img/a2633725090_9.jpg",
+      "artist": "KAYANA",
+      "releaseDate": "August 13, 2021",
+      "tags": "Boston, United States, love, KAYANA, dark ambient, R&B, Massachusetts, Soul, Ambient, vibes",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "nbs",
+      "url": "https://kayana3.bandcamp.com/track/nbs",
+      "imageUrl": "https://f4.bcbits.com/img/a0097440179_9.jpg",
+      "artist": "KAYANA",
+      "releaseDate": "December 2, 2022",
+      "tags": "ambient, R&B, Massachusetts, Soul, Ambient, vibes, Boston, United States, garifuna, real shit, dark ambient",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "everything stolen was already offered...",
+      "url": "https://kayana3.bandcamp.com/track/everything-stolen-was-already-offered",
+      "imageUrl": "https://f4.bcbits.com/img/a2343934495_9.jpg",
+      "artist": "KAYANA",
+      "releaseDate": "June 30, 2023",
+      "tags": "Ambient, vibes, Boston, United States, dark ambient, R&B, Massachusetts, Soul",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Rhythm of the Brave",
+      "url": "https://chrisgudu.bandcamp.com/album/rhythm-of-the-brave",
+      "imageUrl": "https://f4.bcbits.com/img/a1371048745_9.jpg",
+      "artist": "Jive Kayana",
+      "numTracks": 10,
+      "duration": 3360,
+      "releaseDate": "January 1, 2002",
+      "tags": "Australia, Sydney, Mbaqanga, Township Jive, NSW, Jazz, African, Kwassa Kwassa",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "Radio Jive Kayana",
+      "url": "https://chrisgudu.bandcamp.com/track/radio-jive-kayana",
+      "imageUrl": "https://f4.bcbits.com/img/a1371048745_9.jpg",
+      "artist": "Jive Kayana",
+      "album": "Rhythm of the Brave",
+      "releaseDate": "January 1, 2002",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Katana Cologne",
+      "url": "https://katanacologne.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0026822296_21.jpg",
+      "location": "Cologne, Germany",
+      "genre": "Electronic",
+      "tags": "dance, industrial, trance, acid, techno, Electronic",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "Black Sunlight featuring KAYANA",
+      "url": "https://armandhammer.bandcamp.com/track/black-sunlight-featuring-kayana",
+      "imageUrl": "https://f4.bcbits.com/img/a0731622909_9.jpg",
+      "artist": "Armand Hammer & The Alchemist",
+      "album": "Haram",
+      "releaseDate": "March 26, 2021",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "Kayana",
+      "url": "https://thediasonics.bandcamp.com/track/kayana",
+      "imageUrl": "https://f4.bcbits.com/img/a0992219412_9.jpg",
+      "artist": "The Diasonics",
+      "album": "Origin Of Forms",
+      "releaseDate": "January 28, 2022",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "label",
+      "name": "Kid Katana Records",
+      "url": "https://kidkatanarecords.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0039134522_21.jpg",
+      "location": "Paris, France",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Katana ZERO (Original Soundtrack)",
+      "url": "https://wicrecordings.bandcamp.com/album/katana-zero-original-soundtrack",
+      "imageUrl": "https://f4.bcbits.com/img/a2712205983_9.jpg",
+      "artist": "Bill Kiley, LudoWic",
+      "numTracks": 38,
+      "duration": 6420,
+      "releaseDate": "April 18, 2019",
+      "tags": "game music, synthwave, askiisoft, score, nintendo, game soundtrack, video game soundtrack, Devolver Digital, video game music, soundtrack, Netherlands",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Ayanna Witter-Johnson",
+      "url": "https://ayanna.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0019742034_21.jpg",
+      "location": "London, UK",
+      "genre": "R&B/Soul",
+      "tags": "Soul, Jazz, Blues, R&B, Acoustic, R&B/Soul",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "The Diasonics - Kayana",
+      "url": "https://recordkicks.bandcamp.com/track/the-diasonics-kayana",
+      "imageUrl": "https://f4.bcbits.com/img/a1218651371_9.jpg",
+      "artist": "Record Kicks",
+      "album": "Record Kicks Cinematic Nuggets",
+      "releaseDate": "December 9, 2022",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "MONTEZUMA FT. KAYANA prod. HVYARMS",
+      "url": "https://aldotdivino.bandcamp.com/track/montezuma-ft-kayana-prod-hvyarms",
+      "imageUrl": "https://f4.bcbits.com/img/a3129056987_9.jpg",
+      "artist": "al.divino",
+      "album": "PYROGLYPHS",
+      "releaseDate": "March 23, 2024",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Hebi Katana",
+      "url": "https://hebikatana.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0034218118_21.jpg",
+      "location": "Tokyo, Japan",
+      "genre": "Metal",
+      "tags": "doom metal, tokyo samurai doom, 70s-hard-rock, Metal, stoner metal, tokyo",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "track",
+      "name": "Unconditional Struggal Ft. Kayana",
+      "url": "https://iamno1mc.bandcamp.com/track/unconditional-struggal-ft-kayana",
+      "imageUrl": "https://f4.bcbits.com/img/a3390209783_9.jpg",
+      "artist": "No1MC",
+      "album": "Conditional Struggle",
+      "releaseDate": "July 23, 2017",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    }
+  ]
+}

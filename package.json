@@ -17,7 +17,8 @@
     "express": "^4.21.2",
     "fs": "^0.0.1-security",
     "node-fetch": "^2.7.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "punycode": "^2.3.1"
   },
   "devDependencies": {
     "@babel/register": "^7.27.1"

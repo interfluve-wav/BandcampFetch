@@ -1,0 +1,278 @@
+{
+  "searchTerm": "Kaiju",
+  "date": "2025-05-03",
+  "totalResults": 18,
+  "tidalMatches": 0,
+  "results": [
+    {
+      "type": "artist",
+      "name": "Kaiju",
+      "url": "https://kaijudub.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0007945946_21.jpg",
+      "location": "Bristol, UK",
+      "genre": "Electronic",
+      "tags": "Electronic, reggae, dub, bass music, dubstep",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Groovy Kaiju",
+      "url": "https://groovygodzilla.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0027441189_21.jpg",
+      "location": "Long Beach, California",
+      "genre": "Electronic",
+      "tags": "vaporwave, Electronic, vapor funk, nu disco, future funk",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Kaiju Daisenso",
+      "url": "https://kaijudaisenso.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0025438946_21.jpg",
+      "location": "New York",
+      "genre": "Metal",
+      "tags": "hardcore, powerviolence, grindcore, Metal",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Kaijū Themes",
+      "url": "https://kaijuthemes.bandcamp.com/album/kaij-themes",
+      "imageUrl": "https://f4.bcbits.com/img/a0878957216_9.jpg",
+      "artist": "Kaijū Themes",
+      "numTracks": 6,
+      "duration": 3000,
+      "releaseDate": "June 4, 2014",
+      "tags": "quiet, Aichi, witch house, post-apocalyptic, Toyota, Kaiju music, Kaiju themes, river bones, massive, Ambient, Japan",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Kaiju",
+      "url": "https://itlookssad.bandcamp.com/album/kaiju",
+      "imageUrl": "https://f4.bcbits.com/img/a0498581768_9.jpg",
+      "artist": "It Looks Sad.",
+      "numTracks": 2,
+      "duration": 480,
+      "releaseDate": "June 26, 2015",
+      "tags": "USA, United States, alternative, Rock, indie rock, Charlotte, North Carolina, Indie pop, indie pop, emo, Punk, Indie, indie, INDIE POP ROCK ALTERNATIVE",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Kaiju",
+      "url": "https://kaijumusic.bandcamp.com/album/kaiju",
+      "imageUrl": "https://f4.bcbits.com/img/a0516099711_9.jpg",
+      "artist": "Kaiju",
+      "numTracks": 7,
+      "duration": 1800,
+      "releaseDate": "January 28, 2014",
+      "tags": "Technical Metal, Death Metal, Missouri, United States, Kansas City, Metal",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Kaijū Themes",
+      "url": "https://kaijuthemes.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0002934551_21.jpg",
+      "location": "Aichi, Japan",
+      "genre": "Ambient",
+      "tags": "Ambient, post-apocalyptic, Kaiju themes, Kaiju music, quiet",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Kaiju Daisenso",
+      "url": "https://kaijudaisenso.bandcamp.com/album/kaiju-daisenso",
+      "imageUrl": "https://f4.bcbits.com/img/a0420171002_9.jpg",
+      "artist": "Kaiju Daisenso",
+      "numTracks": 10,
+      "duration": 660,
+      "releaseDate": "May 7, 2014",
+      "tags": "Godzilla, Punk, hardcore, United States, powerviolence, Metal, punk hardcore, New York, noise, grindcore",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Le Kaiju",
+      "url": "https://lekaiju.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0038088062_21.jpg",
+      "location": "Paris, France",
+      "genre": "Electronic",
+      "tags": "Electronic, Vogue Beat, dance music, ghetto house, footwork, club",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "chris kaiju",
+      "url": "https://chriskaiju.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0038541001_21.jpg",
+      "location": "California",
+      "genre": "Hip-Hop/Rap",
+      "tags": "hip-hop, Hip-Hop/Rap, electronic, rap, footwork, beats",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Kaiju",
+      "url": "https://kaijumusic.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0002414049_21.jpg",
+      "location": "Kansas City, Missouri",
+      "genre": "Metal",
+      "tags": "Death Metal, Metal, Technical Metal",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "KAIJU BADGER",
+      "url": "https://kaijubadger.bandcamp.com/album/kaiju-badger",
+      "imageUrl": "https://f4.bcbits.com/img/a3411208779_9.jpg",
+      "artist": "KAIJU BADGER",
+      "numTracks": 7,
+      "duration": 960,
+      "releaseDate": "May 12, 2017",
+      "tags": "smooth, Electronic, hybrid, video game music, Québec, Canada, Soundtrack Music, synthwave, electronic music",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Kaiju Badger",
+      "url": "https://kaijubadger.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0025293003_21.jpg",
+      "location": "Québec",
+      "genre": "Electronic",
+      "tags": "hybrid, Electronic, video game music, synthwave, Soundtrack Music",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "artist",
+      "name": "Kaiju",
+      "url": "https://kaijudk.bandcamp.com",
+      "imageUrl": "https://f4.bcbits.com/img/0011020386_21.jpg",
+      "location": "Copenhagen, Denmark",
+      "genre": "Metal",
+      "tags": "Postgrunge, Progressive Metalcore, Alternative Metal, Progressive, Metal",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Still Groovy",
+      "url": "https://pacificplaza.bandcamp.com/album/still-groovy",
+      "imageUrl": "https://f4.bcbits.com/img/a4206460508_9.jpg",
+      "artist": "Groovy Kaiju",
+      "numTracks": 9,
+      "duration": 1620,
+      "releaseDate": "April 17, 2020",
+      "tags": "vaporwave, United States, funk, anime groove, future funk, Electronic, disco, California, post internet, experimental",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Seven Sins",
+      "url": "https://kaijudub.bandcamp.com/album/seven-sins",
+      "imageUrl": "https://f4.bcbits.com/img/a1900722901_9.jpg",
+      "artist": "Kaiju",
+      "numTracks": 7,
+      "duration": 2220,
+      "releaseDate": "August 12, 2016",
+      "tags": "London, Dance, Bristol, United Kingdom, England, bass music, Electronica, Electronic, reggae, dub, dubstep, Dubstep",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "Kaiju Daisenso vs. Oxygen Destroyer",
+      "url": "https://kaijudaisenso.bandcamp.com/album/kaiju-daisenso-vs-oxygen-destroyer",
+      "imageUrl": "https://f4.bcbits.com/img/a0158219359_9.jpg",
+      "artist": "Kaiju Daisenso",
+      "numTracks": 5,
+      "duration": 480,
+      "releaseDate": "October 31, 2021",
+      "tags": "noise, powerviolence, oxygen destroyer, grindcore, hardcore, Thrash Metal, New York, Punk, kaiju, United States, Metal, godzilla, hardcore punk",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    },
+    {
+      "type": "album",
+      "name": "FULLMETAL KAIJU",
+      "url": "https://exocietymusic.bandcamp.com/album/fullmetal-kaiju",
+      "imageUrl": "https://f4.bcbits.com/img/a2766066939_9.jpg",
+      "artist": "Kill Bill: The Rapper",
+      "numTracks": 13,
+      "duration": 1800,
+      "releaseDate": "April 26, 2023",
+      "tags": "rap, hip hop, lofi, Rap, Hip-Hop, Hip-Hop/Rap, independent hip hop, experimentalhip-hop, independent hip-hop, experimental hip hop, underground hip hop, United States",
+      "tidal": {
+        "found": false,
+        "match": null,
+        "matchConfidence": "none"
+      }
+    }
+  ]
+}
