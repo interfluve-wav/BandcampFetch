@@ -12,6 +12,7 @@ Before you begin, ensure you have the following installed on your machine:
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 
 ## Installation
+<img?
 
 1. **Clone the repository:**
 
