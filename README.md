@@ -1,5 +1,8 @@
 # BandcampFetch
 
+<img width="965" alt="Screenshot 2023-01-04 at 10 43 14 AM" src="https://user-
+images.githubusercontent.com/2294248/234366417-eaa200a8-3dd3-409f-a9e3-97412a7bf1aa.png">
+
 ## Overview
 
 BandcampFetch is a Node.js application that allows you to fetch data from Bandcamp. This README provides instructions on how to set up and run the application.
